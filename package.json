@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "description": "A modern, real-time finance dashboard with customizable widgets for tracking financial data",
-  "author": "Optimus Prime",
+  "author": "Anmol Sinha",
   "license": "MIT",
   "scripts": {
     "build": "next build",

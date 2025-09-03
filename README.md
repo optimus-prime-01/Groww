@@ -103,4 +103,4 @@ The dashboard works with any REST API that returns JSON data. Here are some popu
 
 
 
-**Made with ❤️ by Optimus Prime**
+**Made with ❤️ by Anmol Sinha**
