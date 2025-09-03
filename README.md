@@ -84,23 +84,6 @@ The dashboard works with any REST API that returns JSON data. Here are some popu
 - **Alpha Vantage**: `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=AAPL&apikey=YOUR_API_KEY`
 - **Yahoo Finance**: `https://query1.finance.yahoo.com/v8/finance/chart/AAPL`
 
-## 🚀 Deployment
-
-### Vercel (Recommended)
-
-1. Push your code to GitHub
-2. Connect your repository to [Vercel](https://vercel.com)
-3. Deploy with zero configuration
-
-### Manual Deployment
-
-```bash
-# Build the application
-pnpm build
-
-# Start the production server
-pnpm start
-```
 
 ## 📁 Project Structure
 
@@ -119,24 +102,5 @@ pnpm start
 ```
 
 ## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch: `git checkout -b feature/amazing-feature`
-3. Commit your changes: `git commit -m 'Add amazing feature'`
-4. Push to the branch: `git push origin feature/amazing-feature`
-5. Open a Pull Request
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- Built with [Next.js](https://nextjs.org/)
-- UI components from [shadcn/ui](https://ui.shadcn.com/)
-- Icons by [Lucide](https://lucide.dev/)
-- Charts by [Recharts](https://recharts.org/)
-
----
 
 **Made with ❤️ by Optimus Prime**
