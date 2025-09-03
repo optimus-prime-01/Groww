@@ -101,6 +101,6 @@ The dashboard works with any REST API that returns JSON data. Here are some popu
 └── public/               # Static assets
 ```
 
-## 🤝 Contributing
+
 
 **Made with ❤️ by Optimus Prime**
