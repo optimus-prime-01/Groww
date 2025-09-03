@@ -28,28 +28,28 @@ export function WidgetCard({ widget }: { widget: Widget }) {
 
   return (
     <Card className="bg-slate-900/60 ring-1 ring-white/10 shadow-lg shadow-emerald-500/20 hover:shadow-emerald-500/30 transition-shadow duration-300">
-      <CardHeader className="flex-row items-center justify-between space-y-0">
-        <div className="flex items-center gap-3">
-          <CardTitle className="text-base text-white">{widget.name}</CardTitle>
-          <Badge variant="outline" className="text-xs">
+      <CardHeader className="flex-row items-start sm:items-center justify-between space-y-0 p-3 sm:p-6">
+        <div className="flex items-center gap-2 sm:gap-3 min-w-0 flex-1">
+          <CardTitle className="text-sm sm:text-base text-white truncate">{widget.name}</CardTitle>
+          <Badge variant="outline" className="text-xs shrink-0">
             {widget.refreshInterval}s
           </Badge>
         </div>
-        <div className="flex items-center gap-1.5">
-          <Button size="icon" variant="ghost" onClick={() => mutate()} aria-label="Refresh">
-            <RotateCw className={`h-4 w-4 ${isValidating ? "animate-spin" : ""}`} />
+        <div className="flex items-center gap-1 sm:gap-1.5 shrink-0">
+          <Button size="icon" variant="ghost" onClick={() => mutate()} aria-label="Refresh" className="h-8 w-8 sm:h-9 sm:w-9">
+            <RotateCw className={`h-3 w-3 sm:h-4 sm:w-4 ${isValidating ? "animate-spin" : ""}`} />
           </Button>
           <AddWidgetDialog open={opened} onOpenChange={setOpened} preset={widget}>
-            <Button size="icon" variant="ghost" aria-label="Edit">
-              <Settings2 className="h-4 w-4" />
+            <Button size="icon" variant="ghost" aria-label="Edit" className="h-8 w-8 sm:h-9 sm:w-9">
+              <Settings2 className="h-3 w-3 sm:h-4 sm:w-4" />
             </Button>
           </AddWidgetDialog>
-          <Button size="icon" variant="ghost" onClick={() => remove(widget.id)} aria-label="Delete">
-            <Trash2 className="h-4 w-4" />
+          <Button size="icon" variant="ghost" onClick={() => remove(widget.id)} aria-label="Delete" className="h-8 w-8 sm:h-9 sm:w-9">
+            <Trash2 className="h-3 w-3 sm:h-4 sm:w-4" />
           </Button>
         </div>
       </CardHeader>
-      <CardContent className="space-y-3 overflow-hidden">
+      <CardContent className="space-y-2 sm:space-y-3 overflow-hidden p-3 sm:p-6 pt-0">
         {widget.mode === "table" ? (
           <TableWidget data={data} fieldPath={widget.fields[0]} />
         ) : widget.mode === "chart" ? (

@@ -12,32 +12,32 @@ export function WidgetsView() {
   const [open, setOpen] = React.useState(false)
   return (
     <div className="space-y-6">
-      <header className="flex items-center justify-between rounded-xl bg-slate-900/60 px-4 py-4 ring-1 ring-white/10 shadow-lg shadow-emerald-500/20">
+      <header className="flex flex-col sm:flex-row items-start sm:items-center justify-between rounded-xl bg-slate-900/60 px-4 py-4 ring-1 ring-white/10 shadow-lg shadow-emerald-500/20 gap-3 sm:gap-0">
         <div className="flex items-center gap-3">
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-emerald-600/20 text-emerald-400 ring-1 ring-emerald-500/30">
-            <BarChart2 className="h-5 w-5" />
+          <div className="flex h-8 w-8 sm:h-9 sm:w-9 items-center justify-center rounded-lg bg-emerald-600/20 text-emerald-400 ring-1 ring-emerald-500/30">
+            <BarChart2 className="h-4 w-4 sm:h-5 sm:w-5" />
           </div>
           <div>
-            <h1 className="text-lg font-semibold leading-6 text-white text-balance">Finance Dashboard</h1>
+            <h1 className="text-base sm:text-lg font-semibold leading-6 text-white text-balance">Finance Dashboard</h1>
             <p className="text-xs text-slate-400">{widgets.length} active widget • Real-time data</p>
           </div>
         </div>
         <AddWidgetDialog open={open} onOpenChange={setOpen}>
-          <Button className="bg-emerald-600 hover:bg-emerald-500">
+          <Button className="bg-emerald-600 hover:bg-emerald-500 w-full sm:w-auto">
             <Plus className="mr-2 h-4 w-4" />
             Add Widget
           </Button>
         </AddWidgetDialog>
       </header>
 
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3 max-w-full">
+      <div className="grid grid-cols-1 gap-4 sm:gap-6 md:grid-cols-2 xl:grid-cols-3 max-w-full">
         {widgets.map((w) => (
           <WidgetCard key={w.id} widget={w} />
         ))}
-        <div className="rounded-xl border-2 border-dashed border-emerald-600/40 bg-slate-900/40 p-6 ring-1 ring-white/10 shadow-lg shadow-emerald-500/20 hover:shadow-emerald-500/30 transition-shadow duration-300">
-          <div className="flex h-full flex-col items-center justify-center gap-3 text-center">
-            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-emerald-600/20 text-emerald-400 ring-1 ring-emerald-500/30">
-              <Plus className="h-6 w-6" />
+        <div className="rounded-xl border-2 border-dashed border-emerald-600/40 bg-slate-900/40 p-4 sm:p-6 ring-1 ring-white/10 shadow-lg shadow-emerald-500/20 hover:shadow-emerald-500/30 transition-shadow duration-300">
+          <div className="flex h-full flex-col items-center justify-center gap-2 sm:gap-3 text-center">
+            <div className="flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full bg-emerald-600/20 text-emerald-400 ring-1 ring-emerald-500/30">
+              <Plus className="h-5 w-5 sm:h-6 sm:w-6" />
             </div>
             <div className="space-y-1">
               <p className="text-sm font-medium text-white">Add Widget</p>
@@ -46,7 +46,7 @@ export function WidgetsView() {
             <AddWidgetDialog>
               <Button
                 variant="outline"
-                className="border-emerald-700/40 bg-slate-900/60 text-emerald-400 hover:bg-slate-800"
+                className="border-emerald-700/40 bg-slate-900/60 text-emerald-400 hover:bg-slate-800 w-full sm:w-auto"
               >
                 Add
               </Button>

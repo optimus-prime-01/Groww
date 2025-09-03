@@ -14,14 +14,19 @@ export function TableWidget({ data, fieldPath }: { data: any; fieldPath?: string
   }, [rows, q])
   const columns = rows[0] ? Object.keys(rows[0]) : []
   return (
-    <div className="space-y-3">
-      <Input placeholder="Search table..." value={q} onChange={(e) => setQ(e.target.value)} />
+    <div className="space-y-2 sm:space-y-3">
+      <Input 
+        placeholder="Search table..." 
+        value={q} 
+        onChange={(e) => setQ(e.target.value)}
+        className="text-sm"
+      />
       <div className="overflow-x-auto rounded-lg border max-w-full">
-        <table className="w-full text-sm table-fixed">
+        <table className="w-full text-xs sm:text-sm table-fixed min-w-full">
           <thead className="bg-slate-900/70">
             <tr>
               {columns.map((c) => (
-                <th key={c} className="px-3 py-2 text-left font-medium text-slate-300 truncate">
+                <th key={c} className="px-2 sm:px-3 py-1.5 sm:py-2 text-left font-medium text-slate-300 truncate">
                   {c}
                 </th>
               ))}
@@ -31,7 +36,7 @@ export function TableWidget({ data, fieldPath }: { data: any; fieldPath?: string
             {filtered.map((r: any, i: number) => (
               <tr key={i} className="hover:bg-slate-900/40">
                 {columns.map((c) => (
-                  <td key={c} className="px-3 py-2 text-slate-200 truncate max-w-0">
+                  <td key={c} className="px-2 sm:px-3 py-1.5 sm:py-2 text-slate-200 truncate max-w-0">
                     <div className="truncate" title={String(r[c])}>
                       {String(r[c])}
                     </div>
