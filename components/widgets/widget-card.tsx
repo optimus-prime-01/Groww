@@ -49,7 +49,7 @@ export function WidgetCard({ widget }: { widget: Widget }) {
           </Button>
         </div>
       </CardHeader>
-      <CardContent className="space-y-3">
+      <CardContent className="space-y-3 overflow-hidden">
         {widget.mode === "table" ? (
           <TableWidget data={data} fieldPath={widget.fields[0]} />
         ) : widget.mode === "chart" ? (

@@ -11,9 +11,11 @@ export function CardWidget({ data, fields }: { data: any; fields: string[] }) {
     <div className="rounded-lg border bg-slate-950/40">
       <div className="divide-y divide-white/5">
         {items.map((it) => (
-          <div key={it.label} className="grid grid-cols-3 items-center px-4 py-3">
-            <span className="text-xs text-slate-400">{it.label}</span>
-            <div className="col-span-2 text-right font-medium text-slate-100">{String(it.value ?? "—")}</div>
+          <div key={it.label} className="grid grid-cols-3 items-center px-4 py-3 gap-2">
+            <span className="text-xs text-slate-400 truncate">{it.label}</span>
+            <div className="col-span-2 text-right font-medium text-slate-100 truncate" title={String(it.value ?? "—")}>
+              {String(it.value ?? "—")}
+            </div>
           </div>
         ))}
       </div>
